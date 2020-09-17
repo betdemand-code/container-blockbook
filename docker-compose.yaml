@@ -10,3 +10,13 @@ services:
       - 9130:9130
     volumes:
       - .data/bitcoin/testnet:/opt/coins/blockbook/bitcoin_testnet/data
+
+  bb_eth_testnet:
+    container_name: bb_eth_testnet
+    restart: unless-stopped
+    build: ./ethereum/testnet
+    ports:
+      - 9031:9030
+      - 9131:9130
+    volumes:
+      - .data/ethereum/testnet:/opt/coins/blockbook/ethereum/data
