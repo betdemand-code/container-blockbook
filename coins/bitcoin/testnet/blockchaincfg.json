@@ -2,7 +2,7 @@
     "coin_name": "Testnet",
     "coin_shortcut": "TEST",
     "coin_label": "Bitcoin Testnet",
-    "rpc_url": "http://51.15.143.55:18332",
+    "rpc_url": "http://bitcoind:18332",
     "rpc_user": "bitcoinrpc",
     "rpc_pass": "80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48",
     "rpc_timeout": 25,

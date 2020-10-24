@@ -1,17 +1,17 @@
 version: "3.7"
 
 services:
-  geth_testnet:
-    container_name: geth_testnet
+  geth:
+    container_name: geth_goerli
     restart: unless-stopped
     image: ethereum/client-go
     ports:
-      - 8545:8545
-      - 8546:8546
+      #- 8545:8545
+      #- 8546:8546
       - 30303:30303
       - 30303:30303/udp
     volumes:
-      - .data/testnet/geth:/home/geth
+      - .data/testnet/geth_goerli:/home/geth
     command: >
       --datadir /home/geth 
       --http 
@@ -23,10 +23,13 @@ services:
       --nousb 
       --goerli
 
-  bitcoind_testnet:
+  bitcoind:
     container_name: bitcoind_testnet
     restart: unless-stopped
     image: kylemanna/bitcoind
+    ports:
+      #- 18332:18332
+      - 18333:18333
     volumes:
       - .data/testnet/bitcoind:/bitcoin
     command: >
@@ -38,9 +41,11 @@ services:
       -rpcworkqueue=200 
       -txindex=1 
       -disablewallet=0 
+      -rpcuser=bitcoinrpc
+      -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
       -testnet=1
 
-  bb_btc_testnet:
+  bb_btc:
     container_name: bb_btc_testnet
     restart: unless-stopped
     build: ../../coins/bitcoin/testnet
@@ -50,7 +55,7 @@ services:
     volumes:
       - .data/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
 
-  bb_eth_testnet:
+  bb_eth:
     container_name: bb_eth_testnet
     restart: unless-stopped
     build: ../../coins/ethereum/testnet

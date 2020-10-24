@@ -1,11 +1,8 @@
 # docker-blockbook
 
-## bitcoin-testnet
+## Deployment
 ```
-$ docker-compose up -d bb_btc_testnet
+$ cd deployments/{network}
+$ docker-compose up -d {geth, bitcoin, bb_btc, bb_geth}
 ```
 
-## ethereum-testnet (goerli)
-```
-$ docker-compose up -d bb_eth_testnet
-```

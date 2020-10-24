@@ -4,7 +4,7 @@
     "coin_name": "Ethereum Testnet Goerli",
     "coin_shortcut": "tROP",
     "coin_label": "Ethereum Goerli",
-    "rpc_url": "ws://51.15.143.55:8546",
+    "rpc_url": "ws://geth:8546",
     "rpc_user": "",
     "rpc_pass": "",
     "rpc_timeout": 25,
