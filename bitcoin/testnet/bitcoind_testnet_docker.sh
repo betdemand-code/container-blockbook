@@ -14,4 +14,4 @@ docker run -v /var/bitcoind-test:/bitcoin -d \
     -rpcworkqueue=200 \
     -txindex=1 \
     -disablewallet=0 \
-    -testnet=1 
+    -testnet=1
