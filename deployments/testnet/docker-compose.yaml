@@ -43,7 +43,7 @@ services:
   bb_btc_testnet:
     container_name: bb_btc_testnet
     restart: unless-stopped
-    build: ../../bitcoin/testnet
+    build: ../../coins/bitcoin/testnet
     ports:
       - 9030:9030
       - 9130:9130
@@ -53,7 +53,7 @@ services:
   bb_eth_testnet:
     container_name: bb_eth_testnet
     restart: unless-stopped
-    build: ../../ethereum/testnet
+    build: ../../coins/ethereum/testnet
     ports:
       - 9031:9030
       - 9131:9130
