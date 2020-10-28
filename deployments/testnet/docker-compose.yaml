@@ -6,8 +6,8 @@ services:
     restart: unless-stopped
     image: ethereum/client-go
     ports:
-      #- 8545:8545
-      #- 8546:8546
+      - 8545:8545
+      - 8546:8546
       - 30303:30303
       - 30303:30303/udp
     volumes:
@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
     image: kylemanna/bitcoind
     ports:
-      #- 18332:18332
+      - 18332:18332
       - 18333:18333
     volumes:
       - ${dir}/testnet/bitcoind:/bitcoin
