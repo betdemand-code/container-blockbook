@@ -5,6 +5,10 @@ services:
     container_name: geth_goerli
     restart: unless-stopped
     image: ethereum/client-go
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
     ports:
       - 8545:8545
       - 8546:8546
@@ -22,16 +26,15 @@ services:
       --ws.origins "*" 
       --nousb 
       --goerli
-    logging:
-      driver: "json-file"
-      options:
-        max-file: 5
-        max-size: 10m
 
   bitcoind:
     container_name: bitcoind_testnet
     restart: unless-stopped
     image: kylemanna/bitcoind
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
     ports:
       - 18332:18332
       - 18333:18333
@@ -49,38 +52,31 @@ services:
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
       -testnet=1
-    logging:
-      driver: "json-file"
-      options:
-        max-file: 5
-        max-size: 10m
 
   bb_btc:
     container_name: bb_btc_testnet
     restart: unless-stopped
     build: ../../coins/bitcoin/testnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
     ports:
       - 9030:9030
       - 9130:9130
     volumes:
       - ${dir}/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
-    logging:
-      driver: "json-file"
-      options:
-        max-file: 5
-        max-size: 10m
 
   bb_eth:
     container_name: bb_eth_testnet
     restart: unless-stopped
     build: ../../coins/ethereum/testnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
     ports:
       - 9031:9030
       - 9131:9130
     volumes:
       - ${dir}/testnet/bb_eth:/opt/coins/blockbook/ethereum/data
-    logging:
-      driver: "json-file"
-      options:
-        max-file: 5
-        max-size: 10m
