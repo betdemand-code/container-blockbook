@@ -22,6 +22,11 @@ services:
       --ws.origins "*" 
       --nousb 
       --goerli
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 10m
 
   bitcoind:
     container_name: bitcoind_testnet
@@ -44,6 +49,11 @@ services:
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
       -testnet=1
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 10m
 
   bb_btc:
     container_name: bb_btc_testnet
@@ -54,6 +64,11 @@ services:
       - 9130:9130
     volumes:
       - ${dir}/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 10m
 
   bb_eth:
     container_name: bb_eth_testnet
@@ -64,3 +79,8 @@ services:
       - 9131:9130
     volumes:
       - ${dir}/testnet/bb_eth:/opt/coins/blockbook/ethereum/data
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 10m
