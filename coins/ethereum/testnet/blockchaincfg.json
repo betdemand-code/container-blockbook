@@ -1,6 +1,4 @@
 {
-    "mempoolTxTimeoutHours": 12,
-    "queryBackendOnMempoolResync": false,
     "coin_name": "Ethereum Testnet Goerli",
     "coin_shortcut": "tROP",
     "coin_label": "Ethereum Goerli",
@@ -12,7 +10,8 @@
     "message_queue_binding": "",
     "subversion": "",
     "address_format": "",
-
+    "mempoolTxTimeoutHours": 12,
+    "queryBackendOnMempoolResync": false,
     "mempool_workers": 8,
     "mempool_sub_workers": 2,
     "block_addresses_to_keep": 2147483647

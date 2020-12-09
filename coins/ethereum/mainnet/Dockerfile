@@ -1,7 +1,5 @@
 
 # Dockerfile References: https://docs.docker.com/engine/reference/builder/
-
-# Start from the latest golang base image
 FROM debian:stretch 
 
 # Add Maintainer Info
