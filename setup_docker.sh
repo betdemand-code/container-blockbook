@@ -9,7 +9,7 @@ if ! type "docker-compose" >/dev/null; then
     chmod +x /usr/local/bin/docker-compose
 fi
 # Make swap file
-if grep -q '/swapfile swap swap defaults 0 0' "/etc/fstab"; then
+if ! grep -q '/swapfile swap swap defaults 0 0' "/etc/fstab"; then
     fallocate -l 5G /swapfile
     chmod 600 /swapfile
     mkswap /swapfile
