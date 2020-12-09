@@ -45,7 +45,7 @@ services:
       -minrelaytxfee=0 
       -maxmempool=300 
       -mempoolexpiry=10 
-      -rpcworkqueue=200 
+      -rpcworkqueue=400 
       -txindex=1 
       -disablewallet=0 
       -rpcuser=bitcoinrpc
