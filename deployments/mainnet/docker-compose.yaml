@@ -1,0 +1,80 @@
+version: "3.7"
+
+services:
+  geth:
+    container_name: geth
+    restart: unless-stopped
+    image: ethereum/client-go
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 8545:8545
+      - 8546:8546
+      - 30303:30303
+      - 30303:30303/udp
+    volumes:
+      - ${dir}/mainnet/geth:/home/geth
+    command: >
+      --datadir /home/geth 
+      --http 
+      --http.addr "0.0.0.0" 
+      --ws 
+      --ws.addr "0.0.0.0" 
+      --http.corsdomain "*" 
+      --ws.origins "*" 
+      --nousb
+
+  bitcoind:
+    container_name: bitcoind
+    restart: unless-stopped
+    image: kylemanna/bitcoind
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 8332:8332
+      - 8333:8333
+    volumes:
+      - ${dir}/mainnet/bitcoind:/bitcoin
+    command: >
+      -rpcbind=0.0.0.0 
+      -rpcallowip=0.0.0.0/0 
+      -minrelaytxfee=0 
+      -maxmempool=300 
+      -mempoolexpiry=10 
+      -rpcworkqueue=200 
+      -txindex=1 
+      -disablewallet=0 
+      -rpcuser=bitcoinrpc
+      -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
+
+  bb_btc:
+    container_name: bb_btc_mainnet
+    restart: unless-stopped
+    build: ../../coins/bitcoin/mainnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 9030:9030
+      - 9130:9130
+    volumes:
+      - ${dir}/mainnet/bb_bitcoin:/opt/coins/blockbook/bitcoin/data
+
+  bb_eth:
+    container_name: bb_eth_mainnet
+    restart: unless-stopped
+    build: ../../coins/ethereum/mainnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 9031:9030
+      - 9131:9130
+    volumes:
+      - ${dir}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
