@@ -1,5 +1,5 @@
 {
-    "coin_name": "Bitcoin Testnet",
+    "coin_name": "Testnet",
     "coin_shortcut": "Bitcoin Testnet",
     "coin_label": "Bitcoin Testnet",
     "rpc_url": "http://bitcoind:18332",
