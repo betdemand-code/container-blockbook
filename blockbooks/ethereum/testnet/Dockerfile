@@ -18,7 +18,7 @@ RUN dpkg -i blockbook-ethereum_0.3.4_amd64.deb
 
 RUN chmod 775 entrypoint.sh healthcheck.sh
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD "sh -c healthcheck.sh"
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD "./healthcheck.sh"
 
 EXPOSE 9030 9130
 # Command to run the executable

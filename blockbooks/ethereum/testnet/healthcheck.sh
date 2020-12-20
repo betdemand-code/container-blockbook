@@ -7,7 +7,7 @@ fi
 if [ -f "error_count" ]; then
     errCount=$(cat error_count | wc -l)
 fi
-json=$(curl -s http://localhost:9130/api)
+json=$(curl -s http://localhost:9130/api/)
 height=$(echo $json | jq '.blockbook.bestHeight')
 echo "$oldHeight"
 echo "$height"
@@ -27,3 +27,4 @@ if [ -f "error_count" ]; then
     rm error_count
 fi
 echo "$height" >check_height
+exit 0
