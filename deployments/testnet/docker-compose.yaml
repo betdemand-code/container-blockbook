@@ -15,7 +15,7 @@ services:
       - 30303:30303
       - 30303:30303/udp
     volumes:
-      - ${dir}/testnet/geth_goerli:/home/geth
+      - ${DIR}/testnet/geth_goerli:/home/geth
     command: >
       --datadir /home/geth 
       --http 
@@ -39,7 +39,7 @@ services:
       - 18332:18332
       - 18333:18333
     volumes:
-      - ${dir}/testnet/bitcoind:/bitcoin
+      - ${DIR}/testnet/bitcoind:/bitcoin
     command: >
       -rpcbind=0.0.0.0 
       -rpcallowip=0.0.0.0/0 
@@ -56,7 +56,7 @@ services:
   bb_btc:
     container_name: bb_btc_testnet
     restart: unless-stopped
-    build: ../../coins/bitcoin/testnet
+    build: ../../blockbooks/bitcoin/testnet
     logging:
       options:
         max-file: "5"
@@ -65,12 +65,12 @@ services:
       - 9030:9030
       - 9130:9130
     volumes:
-      - ${dir}/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
+      - ${DIR}/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
 
   bb_eth:
     container_name: bb_eth_testnet
     restart: unless-stopped
-    build: ../../coins/ethereum/testnet
+    build: ../../blockbooks/ethereum/testnet
     logging:
       options:
         max-file: "5"
@@ -79,4 +79,4 @@ services:
       - 9031:9030
       - 9131:9130
     volumes:
-      - ${dir}/testnet/bb_eth:/opt/coins/blockbook/ethereum/data
+      - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum/data
