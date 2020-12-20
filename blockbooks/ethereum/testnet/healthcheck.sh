@@ -1,7 +1,7 @@
 #!/bin/bash
 oldHeight=0
 errCount=0
-if [ -f "check_height"]; then
+if [ -f "check_height" ]; then
     oldHeight=$(cat check_height)
 fi
 if [ -f "error_count" ]; then

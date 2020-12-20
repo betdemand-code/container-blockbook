@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 libgflags2v5
+RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 libgflags2v5 curl jq
 
 RUN dpkg -i backend-ethereum_1.9.20-979fc968-satoshilabs-1_amd64.deb
 
