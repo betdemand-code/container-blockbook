@@ -15,7 +15,7 @@ services:
       - 30303:30303
       - 30303:30303/udp
     volumes:
-      - ${dir}/mainnet/geth:/home/geth
+      - ${DIR}/mainnet/geth:/home/geth
     command: >
       --datadir /home/geth 
       --http 
@@ -38,7 +38,7 @@ services:
       - 8332:8332
       - 8333:8333
     volumes:
-      - ${dir}/mainnet/bitcoind:/bitcoin
+      - ${DIR}/mainnet/bitcoind:/bitcoin
     command: >
       -rpcbind=0.0.0.0 
       -rpcallowip=0.0.0.0/0 
@@ -54,7 +54,7 @@ services:
   bb_btc:
     container_name: bb_btc_mainnet
     restart: unless-stopped
-    build: ../../coins/bitcoin/mainnet
+    build: ../../blockbooks/bitcoin/mainnet
     logging:
       options:
         max-file: "5"
@@ -63,12 +63,12 @@ services:
       - 9030:9030
       - 9130:9130
     volumes:
-      - ${dir}/mainnet/bb_bitcoin:/opt/coins/blockbook/bitcoin/data
+      - ${DIR}/mainnet/bb_bitcoin:/opt/coins/blockbook/bitcoin/data
 
   bb_eth:
     container_name: bb_eth_mainnet
     restart: unless-stopped
-    build: ../../coins/ethereum/mainnet
+    build: ../../blockbooks/ethereum/mainnet
     logging:
       options:
         max-file: "5"
@@ -77,4 +77,4 @@ services:
       - 9031:9030
       - 9131:9130
     volumes:
-      - ${dir}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
+      - ${DIR}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
