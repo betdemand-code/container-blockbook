@@ -26,7 +26,7 @@ services:
       --ws.origins "*" 
       --nousb
     networks:
-      nodes:
+      infura:
         ipv4_address: 10.2.0.101
 
   bitcoind:
@@ -54,7 +54,7 @@ services:
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
     networks:
-      nodes:
+      infura:
         ipv4_address: 10.2.0.102
 
   bb_btc:
@@ -70,6 +70,9 @@ services:
       - 9130:9130
     volumes:
       - ${DIR}/mainnet/bb_bitcoin:/opt/coins/blockbook/bitcoin/data
+    networks:
+      infura:
+        ipv4_address: 10.2.0.103
 
   bb_eth:
     container_name: bb_eth_mainnet
@@ -85,8 +88,8 @@ services:
     volumes:
       - ${DIR}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
     networks:
-      nodes:
-        ipv4_address: 10.2.0.103
+      infura:
+        ipv4_address: 10.2.0.104
 
 
 networks:
