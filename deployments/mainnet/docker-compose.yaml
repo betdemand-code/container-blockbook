@@ -25,6 +25,9 @@ services:
       --http.corsdomain "*" 
       --ws.origins "*" 
       --nousb
+    networks:
+      nodes:
+        ipv4_address: 10.2.0.101
 
   bitcoind:
     container_name: bitcoind
@@ -50,6 +53,9 @@ services:
       -disablewallet=0 
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
+    networks:
+      nodes:
+        ipv4_address: 10.2.0.102
 
   bb_btc:
     container_name: bb_btc_mainnet
@@ -78,3 +84,15 @@ services:
       - 9131:9130
     volumes:
       - ${DIR}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
+    networks:
+      nodes:
+        ipv4_address: 10.2.0.103
+
+
+networks:
+  infura:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.2.0.0/24
