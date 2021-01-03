@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/coins/blockbook/ethereum/
+cd /opt/coins/blockbook/ethereum_testnet_goerli/
 
 ./bin/blockbook -sync \
     -blockchaincfg=/app/blockchaincfg.json \

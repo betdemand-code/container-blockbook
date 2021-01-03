@@ -1,6 +1,6 @@
 {
     "coin_name": "Ethereum Testnet Goerli",
-    "coin_shortcut": "tROP",
+    "coin_shortcut": "gETH",
     "coin_label": "Ethereum Goerli",
     "rpc_url": "ws://geth:8546",
     "rpc_user": "",

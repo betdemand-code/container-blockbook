@@ -23,9 +23,12 @@ services:
       --ws 
       --ws.addr "0.0.0.0" 
       --http.corsdomain "*" 
-      --ws.origins "*" 
+      --ws.origins "10.2.0.104" 
       --nousb 
       --goerli
+    networks:
+      infura:
+        ipv4_address: 10.2.0.101
 
   bitcoind:
     container_name: bitcoind_testnet
@@ -52,7 +55,10 @@ services:
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
       -testnet=1
-
+    networks:
+      infura:
+        ipv4_address: 10.2.0.102
+    
   bb_btc:
     container_name: bb_btc_testnet
     restart: unless-stopped
@@ -66,6 +72,9 @@ services:
       - 9130:9130
     volumes:
       - ${DIR}/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
+    networks:
+      infura:
+        ipv4_address: 10.2.0.103
 
   bb_eth:
     container_name: bb_eth_testnet
@@ -79,4 +88,15 @@ services:
       - 9031:9030
       - 9131:9130
     volumes:
-      - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum/data
+      - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_goerli/data
+    networks:
+      infura:
+        ipv4_address: 10.2.0.104
+
+networks:
+  infura:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.2.0.0/24
