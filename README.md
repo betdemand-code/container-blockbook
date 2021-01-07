@@ -4,6 +4,10 @@ The docker container packages for setup swingby node.
 - docker
 - docker-compose
 
+## Install docker&docker compose via script
+```
+$ chmod +x ./setup_docker.sh && ./setup_docker.sh
+```
 ## Setup containers
 ```
 $ cd deployments/{network}
