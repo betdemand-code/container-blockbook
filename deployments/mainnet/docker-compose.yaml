@@ -25,7 +25,7 @@ services:
       --http.corsdomain "*" 
       --ws.origins "*" 
       --nousb
-      --syncmode=light
+      --syncmode=full
     networks:
       infura:
         ipv4_address: 10.2.0.101
