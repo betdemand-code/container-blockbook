@@ -25,6 +25,8 @@ services:
       --http.corsdomain "*" 
       --ws.origins "*" 
       --nousb
+      --cache=4096
+      --maxpeers=200
       --syncmode=full
     networks:
       infura:
