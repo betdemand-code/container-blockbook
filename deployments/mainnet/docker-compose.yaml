@@ -27,7 +27,7 @@ services:
       --nousb
       --cache=4096
       --maxpeers=200
-      --syncmode=full
+      --syncmode=fast
     networks:
       infura:
         ipv4_address: 10.2.0.101
@@ -93,7 +93,6 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.104
-
 
 networks:
   infura:
