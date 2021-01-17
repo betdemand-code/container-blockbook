@@ -69,7 +69,7 @@ services:
         max-file: "5"
         max-size: "10m"
     ports:
-      - 9030:9030
+     #- 9030:9030
       - 9130:9130
     volumes:
       - ${DIR}/mainnet/bb_bitcoin:/opt/coins/blockbook/bitcoin/data
@@ -86,7 +86,7 @@ services:
         max-file: "5"
         max-size: "10m"
     ports:
-      - 9031:9030
+    # - 9031:9030
       - 9131:9130
     volumes:
       - ${DIR}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
