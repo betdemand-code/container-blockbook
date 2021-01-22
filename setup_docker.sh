@@ -1,7 +1,7 @@
 #!/bin/bash
 if ! type "docker" >/dev/null; then
     apt-get update
-    apt-get install -y docker.io git
+    apt-get install -y docker.io git curl
     service docker start
 fi
 if ! type "docker-compose" >/dev/null; then
