@@ -68,13 +68,14 @@ services:
         max-file: "5"
         max-size: "10m"
     ports:
-      - 8845:8545
-      - 8846:8546
-      - 38303:30303
-      - 38303:30303/udp
+      - 8575:8575
+      - 8576:8576
+      - 30311:30311
+      - 30311:30311/udp
     volumes:
       - ${DIR}/testnet/bsc_testnet:/home/geth
     command: >
+      --config /home/geth/config.toml
       --datadir /home/geth 
       --rpc 
       --rpcaddr "0.0.0.0" 
