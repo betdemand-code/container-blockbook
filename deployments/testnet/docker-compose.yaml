@@ -83,7 +83,6 @@ services:
       --wsaddr "0.0.0.0" 
       --rpccorsdomain "*" 
       --wsorigins "0.0.0.0" 
-      --nousb 
     networks:
       infura:
         ipv4_address: 10.2.0.103
