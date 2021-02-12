@@ -16,7 +16,7 @@ RUN dpkg -i backend-bsc-testnet_1.9.13-cbc4ac26-satoshilabs-1_amd64.deb
 
 RUN dpkg -i blockbook-bsc-testnet_0.3.4_amd64.deb
 
-RUN chmod 775 entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 EXPOSE 9030 9130
 # Command to run the executable
