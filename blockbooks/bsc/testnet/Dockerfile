@@ -12,9 +12,9 @@ COPY . .
 
 RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 libgflags2v5
 
-RUN dpkg -i backend-ethereum-testnet-goerli_1.9.24-cc05b050-satoshilabs-1_amd64.deb
+RUN dpkg -i backend-bsc-testnet_1.9.13-cbc4ac26-satoshilabs-1_amd64.deb
 
-RUN dpkg -i blockbook-ethereum-testnet-goerli_0.3.4_amd64.deb
+RUN dpkg -i blockbook-bsc-testnet_0.3.4_amd64.deb
 
 RUN chmod 775 entrypoint.sh
 

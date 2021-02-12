@@ -121,6 +121,23 @@ services:
       infura:
         ipv4_address: 10.2.0.112
 
+  bb_bsc:
+    container_name: bb_bsc_testnet
+    restart: unless-stopped
+    build: ../../blockbooks/bsc/testnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 9032:9030
+      - 9132:9130
+    volumes:
+      - ${DIR}/testnet/bb_bsc:/opt/coins/blockbook/bsc_testnet/data
+    networks:
+      infura:
+        ipv4_address: 10.2.0.113
+
 networks:
   infura:
     driver: bridge
