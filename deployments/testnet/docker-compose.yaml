@@ -76,12 +76,12 @@ services:
       - ${DIR}/testnet/bsc_testnet:/home/geth
     command: >
       --datadir /home/geth 
-      --http 
-      --http.addr "0.0.0.0" 
+      --rpc 
+      --rpcaddr "0.0.0.0" 
       --ws 
-      --ws.addr "0.0.0.0" 
-      --http.corsdomain "*" 
-      --ws.origins "0.0.0.0" 
+      --wsaddr "0.0.0.0" 
+      --rpccorsdomain "*" 
+      --wsorigins "0.0.0.0" 
       --nousb 
     networks:
       infura:
