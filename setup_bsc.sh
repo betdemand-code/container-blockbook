@@ -4,7 +4,7 @@ dir=$DIR
 testnet=$TESTNET
 
 apt-get update
-apt-get install -y wget curl
+apt-get install -y wget curl unzip
 
 if [[ "$testnet" == "" ]]; then
     testnet="false"
