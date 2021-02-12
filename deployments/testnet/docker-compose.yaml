@@ -58,6 +58,34 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.102
+
+  bsc:
+    container_name: bsc_testnet
+    restart: unless-stopped
+    image: swingbylabs/bsc:1.0.5
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 8845:8545
+      - 8846:8546
+      - 38303:30303
+      - 38303:30303/udp
+    volumes:
+      - ${DIR}/testnet/bsc_testnet:/home/geth
+    command: >
+      --datadir /home/geth 
+      --http 
+      --http.addr "0.0.0.0" 
+      --ws 
+      --ws.addr "0.0.0.0" 
+      --http.corsdomain "*" 
+      --ws.origins "0.0.0.0" 
+      --nousb 
+    networks:
+      infura:
+        ipv4_address: 10.2.0.103
     
   bb_btc:
     container_name: bb_btc_testnet
@@ -74,7 +102,7 @@ services:
       - ${DIR}/testnet/bb_bitcoin:/opt/coins/blockbook/bitcoin_testnet/data
     networks:
       infura:
-        ipv4_address: 10.2.0.103
+        ipv4_address: 10.2.0.111
 
   bb_eth:
     container_name: bb_eth_testnet
@@ -91,7 +119,7 @@ services:
       - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_goerli/data
     networks:
       infura:
-        ipv4_address: 10.2.0.104
+        ipv4_address: 10.2.0.112
 
 networks:
   infura:
