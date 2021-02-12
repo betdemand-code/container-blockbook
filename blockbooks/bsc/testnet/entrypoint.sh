@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/coins/blockbook/bsc_testnet/
+cd /server/coins/blockbook/bsc_testnet/
 
 ./bin/blockbook -sync \
     -blockchaincfg=/app/blockchaincfg.json \

@@ -133,7 +133,7 @@ services:
       - 9032:9030
       - 9132:9130
     volumes:
-      - ${DIR}/testnet/bb_bsc:/opt/coins/blockbook/bsc_testnet/data
+      - ${DIR}/testnet/bb_bsc:/server/coins/blockbook/bsc_testnet/data
     networks:
       infura:
         ipv4_address: 10.2.0.113
