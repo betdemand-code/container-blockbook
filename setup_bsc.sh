@@ -20,6 +20,7 @@ if [[ "$testnet" == "true" ]]; then
     cd "$dir/testnet/bsc_testnet"
     wget --no-check-certificate $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest | grep browser_ | grep testnet | cut -d\" -f4)
     unzip testnet.zip
+    rm *.zip
 fi
 if [[ "$testnet" == "false" ]]; then
     if [ -e "$dir/mainnet/bsc_mainnet/genesis.json" ]; then
