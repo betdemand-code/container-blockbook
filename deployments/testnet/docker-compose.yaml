@@ -42,7 +42,7 @@ services:
       - 18332:18332
       - 18333:18333
     volumes:
-      - ${DIR}/testnet/bitcoind:/bitcoin
+      - ${DIR}/testnet/bitcoind:/bitcoin/.bitcoin
     command: >
       -rpcbind=0.0.0.0 
       -rpcallowip=0.0.0.0/0 
