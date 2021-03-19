@@ -1,6 +1,6 @@
 
 # Dockerfile References: https://docs.docker.com/engine/reference/builder/
-FROM debian:stretch 
+FROM debian:bullseye 
 
 # Add Maintainer Info
 LABEL maintainer="Yusaku Senga <yusaku@swingby.network>"
@@ -10,11 +10,11 @@ WORKDIR /app
 
 COPY . .
 
-RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 libgflags2v5
+RUN apt-get update -y && apt-get install -y logrotate libc6 libsnappy1v5 libzmq5
 
-RUN dpkg -i backend-ethereum-testnet-goerli_1.9.24-cc05b050-satoshilabs-1_amd64.deb
+RUN dpkg -i backend-ethereum_1.10.1-c2d2f4ed-satoshilabs-1_amd64.deb
 
-RUN dpkg -i blockbook-ethereum-testnet-goerli_0.3.4_amd64.deb
+RUN dpkg -i blockbook-ethereum_0.3.4_amd64.deb
 
 RUN chmod 775 entrypoint.sh
 
