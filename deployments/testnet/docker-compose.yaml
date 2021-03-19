@@ -4,7 +4,7 @@ services:
   geth:
     container_name: geth_goerli
     restart: unless-stopped
-    image: ethereum/client-go:stable
+    image: ethereum/client-go:v1.10.1
     logging:
       options:
         max-file: "5"
