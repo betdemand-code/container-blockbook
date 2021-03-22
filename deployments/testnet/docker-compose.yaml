@@ -78,15 +78,17 @@ services:
       --config /home/geth/config.toml
       --datadir /home/geth 
       --rpc 
-      --rpcaddr "0.0.0.0" 
+      --rpcaddr "0.0.0.0"
+      --rpcport "8575" 
       --ws 
       --wsaddr "0.0.0.0" 
+      --wsport "8576"
       --rpccorsdomain "*" 
-      --wsorigins "0.0.0.0" 
+      --wsorigins "0.0.0.0"
     networks:
       infura:
         ipv4_address: 10.2.0.103
-    
+
   bb_btc:
     container_name: bb_btc_testnet
     restart: unless-stopped

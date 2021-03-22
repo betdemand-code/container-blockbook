@@ -82,7 +82,8 @@ services:
       --rpcaddr "0.0.0.0"
       --rpcport "8575"
       --ws
-      --wsaddr "0.0.0.0" 
+      --wsaddr "0.0.0.0"
+      --wsport "8576" 
       --rpccorsdomain "*" 
       --wsorigins "0.0.0.0" 
     networks:
