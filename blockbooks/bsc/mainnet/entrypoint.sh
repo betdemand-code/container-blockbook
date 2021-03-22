@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/coins/blockbook/bsc/
+cd /server/coins/blockbook/bsc/
 
 ./bin/blockbook -sync \
     -blockchaincfg=/app/blockchaincfg.json \
@@ -8,6 +8,6 @@ cd /opt/coins/blockbook/bsc/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=11500000 \
+    -blockheight=0 \
     -workers=1 \
     -logtostderr
