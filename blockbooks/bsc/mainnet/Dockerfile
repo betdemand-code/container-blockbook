@@ -12,11 +12,11 @@ COPY . .
 
 RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 libgflags2v5
 
-RUN dpkg -i backend-ethereum_1.9.24-cc05b050-satoshilabs-1_amd64.deb
+RUN dpkg -i backend-bsc_1.9.13-cbc4ac26-satoshilabs-1_amd64.deb
 
-RUN dpkg -i blockbook-ethereum_0.3.4_amd64.deb
+RUN dpkg -i blockbook-bsc_0.3.4_amd64.deb
 
-RUN chmod 775 entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 EXPOSE 9030 9130
 # Command to run the executable

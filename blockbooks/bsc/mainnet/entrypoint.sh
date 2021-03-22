@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/coins/blockbook/ethereum/
+cd /opt/coins/blockbook/bsc/
 
 ./bin/blockbook -sync \
     -blockchaincfg=/app/blockchaincfg.json \

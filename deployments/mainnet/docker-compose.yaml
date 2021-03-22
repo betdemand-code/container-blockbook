@@ -60,6 +60,34 @@ services:
       infura:
         ipv4_address: 10.2.0.102
 
+  bsc:
+    container_name: bsc
+    restart: unless-stopped
+    image: swingbylabs/bsc:1.0.5
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 8575:8575
+      - 8576:8576
+      - 30311:30311
+      - 30311:30311/udp
+    volumes:
+      - ${DIR}/mainnet/bsc:/home/geth
+    command: >
+      --config /home/geth/config.toml
+      --datadir /home/geth 
+      --rpc 
+      --rpcaddr "0.0.0.0" 
+      --ws 
+      --wsaddr "0.0.0.0" 
+      --rpccorsdomain "*" 
+      --wsorigins "0.0.0.0" 
+    networks:
+      infura:
+        ipv4_address: 10.2.0.103
+
   bb_btc:
     container_name: bb_btc_mainnet
     restart: unless-stopped
@@ -75,7 +103,7 @@ services:
       - ${DIR}/mainnet/bb_bitcoin:/opt/coins/blockbook/bitcoin/data
     networks:
       infura:
-        ipv4_address: 10.2.0.103
+        ipv4_address: 10.2.0.111
 
   bb_eth:
     container_name: bb_eth_mainnet
@@ -92,7 +120,24 @@ services:
       - ${DIR}/mainnet/bb_eth:/opt/coins/blockbook/ethereum/data
     networks:
       infura:
-        ipv4_address: 10.2.0.104
+        ipv4_address: 10.2.0.112
+
+  bb_bsc:
+    container_name: bb_bsc
+    restart: unless-stopped
+    build: ../../blockbooks/bsc/mainnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 9032:9030
+      - 9132:9130
+    volumes:
+      - ${DIR}/mainnet/bb_bsc:/server/coins/blockbook/bsc/data
+    networks:
+      infura:
+        ipv4_address: 10.2.0.113
 
 networks:
   infura:
