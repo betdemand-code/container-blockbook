@@ -79,8 +79,9 @@ services:
       --config /home/geth/config.toml
       --datadir /home/geth 
       --rpc 
-      --rpcaddr "0.0.0.0" 
-      --ws 
+      --rpcaddr "0.0.0.0"
+      --rpcport "8575"
+      --ws
       --wsaddr "0.0.0.0" 
       --rpccorsdomain "*" 
       --wsorigins "0.0.0.0" 
