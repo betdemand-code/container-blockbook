@@ -77,7 +77,7 @@ services:
       - ${DIR}/mainnet/bsc:/home/geth
     command: >
       --config /home/geth/config.toml
-      --datadir /home/geth 
+      --datadir /home/geth/data
       --rpc 
       --rpcaddr "0.0.0.0"
       --rpcport "8575"
@@ -85,7 +85,10 @@ services:
       --wsaddr "0.0.0.0"
       --wsport "8576" 
       --rpccorsdomain "*" 
-      --wsorigins "0.0.0.0" 
+      --wsorigins "0.0.0.0"
+      --pprofaddr 0.0.0.0
+      --metrics
+      --pprof 
     networks:
       infura:
         ipv4_address: 10.2.0.103
