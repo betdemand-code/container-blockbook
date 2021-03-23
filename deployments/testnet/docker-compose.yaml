@@ -76,7 +76,7 @@ services:
       - ${DIR}/testnet/bsc_testnet:/home/geth
     command: >
       --config /home/geth/config.toml
-      --datadir /home/geth 
+      --datadir /home/geth/data 
       --rpc 
       --rpcaddr "0.0.0.0"
       --rpcport "8575" 
