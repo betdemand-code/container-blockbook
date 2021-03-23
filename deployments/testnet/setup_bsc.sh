@@ -7,7 +7,6 @@ if ! type "unzip" >/dev/null; then
 fi
 
 if [ -e "$dir/testnet/bsc_testnet/genesis.json" ]; then
-    sed -i '/HTTPHost/d' "$dir/testnet/bsc_testnet/config.toml"
     exit 0
 fi
 mkdir -p "$dir/testnet/bsc_testnet"
@@ -16,3 +15,4 @@ wget --no-check-certificate $(curl -s https://api.github.com/repos/binance-chain
 unzip testnet.zip
 rm *.zip
 
+sed -i '/HTTPHost/d' "$dir/testnet/bsc_testnet/config.toml"

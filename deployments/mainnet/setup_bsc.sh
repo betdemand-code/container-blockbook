@@ -5,6 +5,7 @@ if ! type "unzip" >/dev/null; then
     apt-get update
     apt-get install -y wget curl unzip
 fi
+
 if [ -e "$dir/mainnet/bsc/genesis.json" ]; then
     exit 0
 fi
