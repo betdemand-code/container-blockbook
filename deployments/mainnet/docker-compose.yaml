@@ -128,7 +128,7 @@ services:
         ipv4_address: 10.2.0.112
 
   bb_bsc:
-    container_name: bb_bsc
+    container_name: bb_bsc_mainnet
     restart: unless-stopped
     build: ../../blockbooks/bsc/mainnet
     logging:
