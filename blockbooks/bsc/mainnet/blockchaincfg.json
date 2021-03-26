@@ -10,7 +10,7 @@
     "message_queue_binding": "",
     "subversion": "",
     "address_format": "",
-    "mempoolTxTimeoutHours": 48,
+    "mempoolTxTimeoutHours": 12,
     "queryBackendOnMempoolResync": false,
     "mempool_workers": 8,
     "mempool_sub_workers": 2,
