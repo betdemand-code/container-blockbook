@@ -28,6 +28,7 @@ services:
       --cache=4096
       --maxpeers=200
       --syncmode=fast
+      --gpopercentile=70
     networks:
       infura:
         ipv4_address: 10.2.0.101
