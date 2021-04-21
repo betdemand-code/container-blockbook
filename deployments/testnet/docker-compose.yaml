@@ -62,7 +62,7 @@ services:
   bsc:
     container_name: bsc_testnet
     restart: unless-stopped
-    image: swingbylabs/bsc:1.0.7
+    image: swingbylabs/bsc:1.0.6
     logging:
       options:
         max-file: "5"
@@ -85,6 +85,9 @@ services:
       --wsport "8576"
       --rpccorsdomain "*" 
       --wsorigins "0.0.0.0"
+      --pprofaddr 0.0.0.0
+      --metrics
+      --pprof 
     networks:
       infura:
         ipv4_address: 10.2.0.103
