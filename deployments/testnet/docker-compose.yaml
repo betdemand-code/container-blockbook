@@ -146,6 +146,7 @@ services:
 
 networks:
   infura:
+    name: infura
     driver: bridge
     ipam:
       driver: default
