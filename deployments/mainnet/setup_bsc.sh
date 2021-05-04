@@ -12,6 +12,7 @@ fi
 cd "$dir/mainnet/bsc"
 wget --no-check-certificate $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest | grep browser_ | grep mainnet | cut -d\" -f4)
 unzip mainnet.zip
-rm *.zip
+rm mainnet.zip
+rm mainnet.zip.*
 
 sed -i '/HTTPHost/d' "$dir/mainnet/bsc/config.toml"
