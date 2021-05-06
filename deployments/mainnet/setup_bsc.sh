@@ -16,8 +16,8 @@ rm -f mainnet.zip
 rm -f mainnet.zip.*
 
 sed -i '/HTTPHost/d' "$dir/mainnet/bsc/config.toml"
-sed -i '/[Node.LogConfig]/d' "$dir/mainnet/bsc/config.toml"
-sed -i '/FilePath = "bsc.log"/d' "$dir/mainnet/bsc/config.toml"
-sed -i '/MaxBytesSize = 10485760/d' "$dir/mainnet/bsc/config.toml"
-sed -i '/Level = "info"/d' "$dir/mainnet/bsc/config.toml"
-sed -i '/FileRoot = ""/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/Node.LogConfig/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/FilePath/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/MaxBytesSize/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/Level/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/FileRoot/d' "$dir/mainnet/bsc/config.toml"
