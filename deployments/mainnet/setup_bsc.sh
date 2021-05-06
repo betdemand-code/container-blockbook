@@ -16,3 +16,4 @@ rm -f mainnet.zip
 rm -f mainnet.zip.*
 
 sed -i '/HTTPHost/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/[Node.LogConfig]/d' "$dir/mainnet/bsc/config.toml"
