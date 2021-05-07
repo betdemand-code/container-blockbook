@@ -54,7 +54,6 @@ services:
       -mempoolexpiry=12 
       -rpcworkqueue=600
       -txindex=1
-      -reindex
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
     networks:
