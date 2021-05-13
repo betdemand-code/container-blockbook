@@ -20,9 +20,10 @@ services:
       --datadir /home/geth 
       --http 
       --http.addr "0.0.0.0" 
+      --http.vhosts "*"
+      --http.corsdomain "*" 
       --ws 
       --ws.addr "0.0.0.0" 
-      --http.corsdomain "*" 
       --ws.origins "*" 
       --nousb
       --cache=4096
@@ -83,6 +84,7 @@ services:
       --http.addr "0.0.0.0"
       --http.corsdomain "*" 
       --http.port "8575"
+      --http.vhosts "*"
       --ws
       --ws.addr "0.0.0.0"
       --ws.port "8576" 
