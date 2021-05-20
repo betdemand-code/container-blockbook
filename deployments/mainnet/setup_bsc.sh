@@ -18,3 +18,6 @@ rm -f mainnet.zip.*
 sed -i '/HTTPHost/d' "$dir/mainnet/bsc/config.toml"
 
 sed -i '/Node.LogConfig/,+4 d' "$dir/mainnet/bsc/config.toml"
+
+sed -i '/GraphQLPort/d' "$dir/mainnet/bsc/config.toml"
+sed -i '/GraphQLVirtualHosts/d' "$dir/mainnet/bsc/config.toml"
