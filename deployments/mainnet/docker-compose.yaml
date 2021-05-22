@@ -20,6 +20,7 @@ services:
       --datadir /home/geth 
       --http 
       --http.addr "0.0.0.0" 
+      --http.vhosts "*"
       --ws 
       --ws.addr "0.0.0.0" 
       --http.corsdomain "*" 
