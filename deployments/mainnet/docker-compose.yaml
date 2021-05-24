@@ -37,7 +37,7 @@ services:
   bitcoind:
     container_name: bitcoind
     restart: unless-stopped
-    image: kylemanna/bitcoind
+    image: kylemanna/bitcoind@sha256:2d24b29532ecbd4706358ce49b0549b73b905414e62cb2cb7ce431796941344f
     logging:
       options:
         max-file: "5"
