@@ -20,11 +20,16 @@ services:
       --datadir /home/geth 
       --http 
       --http.addr "0.0.0.0" 
+      --http.vhosts "*"
       --ws 
       --ws.addr "0.0.0.0" 
       --http.corsdomain "*" 
-      --ws.origins "10.2.0.104" 
-      --nousb 
+      --ws.origins "*" 
+      --nousb
+      --cache=4096
+      --maxpeers=200
+      --syncmode=fast
+      --gpo.percentile=70
       --goerli
     networks:
       infura:
@@ -48,10 +53,9 @@ services:
       -rpcallowip=0.0.0.0/0 
       -minrelaytxfee=0 
       -maxmempool=300 
-      -mempoolexpiry=10 
-      -rpcworkqueue=500 
-      -txindex=1 
-      -disablewallet=0 
+      -mempoolexpiry=12 
+      -rpcworkqueue=600
+      -txindex=1
       -rpcuser=bitcoinrpc
       -rpcpassword=80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48
       -testnet=1
