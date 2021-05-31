@@ -8,6 +8,6 @@ cd /server/coins/blockbook/bsc_testnet/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=7940244 \
+    -blockheight=7156174 \
     -workers=1 \
     -logtostderr
