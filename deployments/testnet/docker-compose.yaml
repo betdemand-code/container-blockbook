@@ -38,7 +38,7 @@ services:
   bitcoind:
     container_name: bitcoind_testnet
     restart: unless-stopped
-    image: kylemanna/bitcoind
+    image: kylemanna/bitcoind@sha256:2d24b29532ecbd4706358ce49b0549b73b905414e62cb2cb7ce431796941344f
     logging:
       options:
         max-file: "5"
@@ -66,7 +66,7 @@ services:
   bsc:
     container_name: bsc_testnet
     restart: unless-stopped
-    image: swingbylabs/bsc:1.0.7
+    image: swingbylabs/bsc:1.1.0-beta
     logging:
       options:
         max-file: "5"
@@ -80,19 +80,17 @@ services:
       - ${DIR}/testnet/bsc_testnet:/home/geth
     command: >
       --config /home/geth/config.toml
-      --datadir /home/geth/data 
-      --rpc 
-      --rpcaddr "0.0.0.0"
-      --rpcport "8575" 
-      --ws 
-      --wsaddr "0.0.0.0" 
-      --wsport "8576"
-      --rpccorsdomain "*" 
-      --wsorigins "0.0.0.0"
-      --pprofaddr 0.0.0.0
-      --metrics
-      --pprof 
-      --syncmode=full
+      --datadir /home/geth/data
+      --syncmode=snap
+      --http 
+      --http.addr "0.0.0.0"
+      --http.corsdomain "*" 
+      --http.port "8575"
+      --http.vhosts "*"
+      --ws
+      --ws.addr "0.0.0.0"
+      --ws.port "8576" 
+      --ws.origins "0.0.0.0"
     networks:
       infura:
         ipv4_address: 10.2.0.103
