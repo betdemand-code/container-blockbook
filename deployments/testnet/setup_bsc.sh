@@ -17,5 +17,7 @@ rm *.zip
 
 sed -i '/HTTPHost/d' "$dir/testnet/bsc_testnet/config.toml"
 
+sed -i '/Node.LogConfig/,+4 d' "$dir/testnet/bsc_testnet/config.toml"
+
 sed -i '/GraphQLPort/d' "$dir/testnet/bsc_testnet/config.toml"
 sed -i '/GraphQLVirtualHosts/d' "$dir/testnet/bsc_testnet/config.toml"
