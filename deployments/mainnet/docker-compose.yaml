@@ -4,7 +4,7 @@ services:
   geth:
     container_name: geth
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.1
+    image: ethereum/client-go@sha256:f09e1ca5128821fe6aabf93538fce55fabcb91cd36df90e98fa74a381c4bf25b
     logging:
       options:
         max-file: "5"
@@ -29,7 +29,7 @@ services:
       --cache=4096
       --maxpeers=200
       --syncmode=fast
-      --gpo.percentile=70
+      --gpo.percentile=75
     networks:
       infura:
         ipv4_address: 10.2.0.101
