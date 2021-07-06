@@ -15,7 +15,7 @@ services:
       - 30303:30303
       - 30303:30303/udp
     volumes:
-      - ${DIR}/testnet/geth_goerli:/home/geth
+      - ${DIR}/testnet/geth:/home/geth
     command: >
       --datadir /home/geth 
       --http 
