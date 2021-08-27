@@ -64,7 +64,7 @@ services:
   bsc:
     container_name: bsc
     restart: unless-stopped
-    image: swingbylabs/bsc:1.1.0-beta
+    image: swingbylabs/bsc:1.1.2
     logging:
       options:
         max-file: "5"
