@@ -115,7 +115,7 @@ services:
   bb_eth:
     container_name: bb_eth_testnet
     restart: unless-stopped
-    build: ../../blockbooks/ethereum/testnet
+    build: ../../blockbooks/ethereum/ropsten
     logging:
       options:
         max-file: "5"
@@ -124,7 +124,7 @@ services:
       - 9031:9030
       - 9131:9130
     volumes:
-      - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_goerli/data
+      - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_ropsten/data
     networks:
       infura:
         ipv4_address: 10.2.0.112
