@@ -8,6 +8,6 @@ cd /opt/coins/blockbook/ethereum_testnet_ropsten/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=11069956 \
+    -blockheight=11220962 \
     -workers=1 \
     -logtostderr
