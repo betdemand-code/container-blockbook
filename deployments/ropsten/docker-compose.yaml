@@ -4,7 +4,7 @@ services:
   geth:
     container_name: geth_ropsten
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.7
+    image: ethereum/client-go:v1.10.9
     logging:
       options:
         max-file: "5"
@@ -31,7 +31,6 @@ services:
       --syncmode=fast
       --gpo.percentile=75
       --ropsten
-      --whitelist 10920274=0x2fd63eb95c8059a46b5afedb903ef1639b9414e9d38f70b3dfb0f733b7ced14f
     networks:
       infura:
         ipv4_address: 10.2.0.101
