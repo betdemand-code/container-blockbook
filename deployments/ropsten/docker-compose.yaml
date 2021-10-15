@@ -31,6 +31,7 @@ services:
       --syncmode=fast
       --gpo.percentile=75
       --ropsten
+      --whitelist 10920274=0xfd652086d220d506ae5b7cb80fde97d2f3f7028d346cc7d9d384a83d3d638532
     networks:
       infura:
         ipv4_address: 10.2.0.101
