@@ -79,7 +79,7 @@ services:
     command: >
       --config /home/geth/config.toml
       --datadir /home/geth/data
-      --syncmode=snap
+      --syncmode=fast
       --http 
       --http.addr "0.0.0.0"
       --http.corsdomain "*" 
