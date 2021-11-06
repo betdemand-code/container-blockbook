@@ -81,7 +81,7 @@ services:
       --datadir /home/geth/data
       --syncmode=snap
       --cache 8096
-      --txlookuplimit 0
+      --txlookuplimit 12361322
       --http 
       --http.addr "0.0.0.0"
       --http.corsdomain "*" 
