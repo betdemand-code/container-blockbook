@@ -91,6 +91,7 @@ services:
       --ws.addr "0.0.0.0"
       --ws.port "8576" 
       --ws.origins "0.0.0.0"
+      --diffsync
     networks:
       infura:
         ipv4_address: 10.2.0.103
