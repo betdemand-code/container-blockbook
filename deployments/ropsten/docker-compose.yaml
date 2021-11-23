@@ -4,7 +4,7 @@ services:
   geth:
     container_name: geth_ropsten
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.9
+    image: ethereum/client-go:v1.10.12
     logging:
       options:
         max-file: "5"
