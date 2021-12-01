@@ -65,6 +65,10 @@ services:
     container_name: bsc
     restart: unless-stopped
     image: swingbylabs/bsc:1.1.5
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
     logging:
       options:
         max-file: "5"
