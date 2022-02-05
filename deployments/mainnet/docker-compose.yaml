@@ -28,7 +28,7 @@ services:
       --nousb
       --cache=4096
       --maxpeers=200
-      --syncmode=fast
+      --syncmode=snap
       --gpo.percentile=75
     networks:
       infura:
