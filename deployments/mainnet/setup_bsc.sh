@@ -10,7 +10,7 @@ if ! [ -e "$dir/mainnet/bsc/genesis.json" ]; then
     mkdir -p "$dir/mainnet/bsc"
 fi
 cd "$dir/mainnet/bsc"
-wget --no-check-certificate $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest | grep browser_ | grep mainnet | cut -d\" -f4)
+wget https://github.com/bnb-chain/bsc/releases/download/v1.1.8/mainnet.zip
 unzip -o mainnet.zip
 mv mainnet/genesis.json ./genesis.json
 mv mainnet/config.toml ./config.toml
