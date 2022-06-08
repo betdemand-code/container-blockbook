@@ -17,6 +17,7 @@ services:
     volumes:
       - ${DIR}/testnet/geth:/home/geth
     command: >
+      --ropsten
       --datadir /home/geth 
       --http 
       --http.addr "0.0.0.0" 
@@ -29,7 +30,6 @@ services:
       --maxpeers=200
       --syncmode=snap
       --gpo.percentile=75
-      --ropsten
       --override.terminaltotaldifficulty "100000000000000000000000"
     networks:
       infura:
