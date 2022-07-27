@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: bb-btc-config
+  name: bitcoind-config
   labels:
-    app: bb-btc
+    app: bitcoind
     tier: blockbook
   namespace: dev
 data:
@@ -14,4 +14,4 @@ data:
   mempoolexpiry: 12
   rpcworkqueue: 600
   txindex: 1
-  rpcuser: bitcoinrpc
+  rpcuser: "bitcoinrpc"

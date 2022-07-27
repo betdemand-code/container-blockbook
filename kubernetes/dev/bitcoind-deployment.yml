@@ -60,6 +60,5 @@ spec:
             #periodSeconds: 10    
       volumes:
         - name: datapv-bitcoind
-          hostPath:
-            path: /bitcoin/.bitcoin
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: datapv-bitcoind

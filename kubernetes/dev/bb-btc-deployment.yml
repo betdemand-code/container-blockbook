@@ -60,6 +60,5 @@ spec:
             #periodSeconds: 10    
       volumes:
         - name: datapv-bb-btc
-          hostPath:
-            path: /data
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: datapv-bb-btc
