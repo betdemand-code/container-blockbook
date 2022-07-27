@@ -2,7 +2,7 @@
     "coin_name": "Bitcoin",
     "coin_shortcut": "BTC",
     "coin_label": "Bitcoin",
-    "rpc_url": "http://bitcoind:8332",
+    "rpc_url": "http://bitcoind.dev:8332",
     "rpc_user": "bitcoinrpc",
     "rpc_pass": "80vDUBXVMS4zH4Z+KjmBQuhKefsh0qNrBvM4G+ry0/48",
     "rpc_timeout": 25,

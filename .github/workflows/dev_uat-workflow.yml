@@ -15,7 +15,7 @@ jobs:
     name: Build, Publish and Push Artifact/Docker Image 
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "blockbook"
+      IMAGE_NAME: "bb-btc"
       AWS_ACCESS_KEY_ID:      ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION:             ${{ secrets.AWS_REGION }}
@@ -28,7 +28,7 @@ jobs:
         run:  |
             cd blockbooks/bitcoin/mainnet/
             pwd
-            docker build . -t bb-btc
+            docker build . -t $IMAGE_NAME
             echo "Container iamge list..."
             docker images
         env:
@@ -71,7 +71,7 @@ jobs:
         uses: rtCamp/action-slack-notify@master                 
         env:                                                    
           SLACK_CHANNEL: cicd-pipeline                   
-          SLACK_MESSAGE: 'Newly updated Dev backend Container Image Push to ECR Successful!'
+          SLACK_MESSAGE: 'Newly updated blockbook-btc Container Image Push to ECR Successful!'
           SLACK_TITLE: 'Blockbook Container Image Push to ECR'                         
           SLACK_USERNAME: 'CICD Pipeline'                           
           SLACK_ICON: "https://a.slack-edge.com/80588/img/services/outgoing-webhook_512.png"
