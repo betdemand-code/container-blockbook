@@ -27,7 +27,7 @@ jobs:
       - name: build application
         run:  |
             pwd
-            docker build . -t bb-btc -f ../bitcoin/mainnet
+            docker build . -t bb-btc -f blockbooks/bitcoin/mainnet
             echo "Container iamge list..."
             docker images
         env:
