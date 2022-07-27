@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demand-pay-config
+  labels:
+    app: demand-pay
+    tier: backend
+  namespace: prod
+data:
+  _JAVA_OPTIONS: "-Xmx512m -Xms256m"
+  SPRING_PROFILES_ACTIVE: "prod"
+  MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED: "true"
+  SPRING_DATASOURCE_URL: "jdbc:mysql://dev-betdemandbackend.c4tkfxuaxw6p.eu-central-1.rds.amazonaws.com:3306/demand-pay?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true"
+  SPRING_DATASOURCE_USERNAME: "admin"
+  AUTH0_AUDIENCE: "https://demandpay.betdemand.com/api/v1"
+  DEMAND_PAY_MOCK_ENABLED: "false"

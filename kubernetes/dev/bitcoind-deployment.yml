@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bitcoind
+  namespace: dev
+spec:
+  selector:
+    app: bitcoind
+    tier: blockbook
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 9130
+      targetPort: 9130
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bitcoind-deployment
+  namespace: dev
+spec:
+  replicas: 1
+  strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxUnavailable: 0
+     maxSurge: 1
+  selector: 
+    matchLabels:
+      app: bitcoind
+      tier: blockbook
+  template:
+    metadata:
+      labels:
+        app: bitcoind
+        tier: blockbook
+      namespace: dev
+    spec:
+      containers:
+        - name: bitcoind
+          image: gostartups/blockbookonly-bitcoin
+          envFrom:
+            #- secretRef:
+                #name: bitcoind-secret
+            #- configMapRef:
+                #name: bitcoind-config
+          volumeMounts:
+            - name: datapv
+              mountPath: /opt/coins/blockbook/bitcoin/data
+          resources:
+            requests:
+              cpu: 200m
+              memory: "512Mi"
+          #readinessProbe:
+            #httpGet:
+              #path: /
+              #port: 9130
+            #initialDelaySeconds: 60
+            #periodSeconds: 10    
+      volumes:
+        - name: datapv
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate

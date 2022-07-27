@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bb-btc-config
+  labels:
+    app: bb-btc
+    tier: blockbook
+  namespace: dev
+data:
+  _JAVA_OPTIONS: "-Xmx512m -Xms256m"
+  SPRING_PROFILES_ACTIVE: "dev"
+  MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED: "true"
