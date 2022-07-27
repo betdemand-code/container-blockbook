@@ -39,15 +39,15 @@ spec:
     spec:
       containers:
         - name: bitcoind
-          image: gostartups/blockbookonly-bitcoin
+          image: kylemanna/bitcoind
           envFrom:
-            #- secretRef:
-                #name: bitcoind-secret
-            #- configMapRef:
-                #name: bitcoind-config
+            - secretRef:
+                name: bitcoind-secret
+            - configMapRef:
+                name: bitcoind-config
           volumeMounts:
-            - name: datapv
-              mountPath: /opt/coins/blockbook/bitcoin/data
+            - name: datapv-bitcoind
+              mountPath: /bitcoin/.bitcoin
           resources:
             requests:
               cpu: 200m
@@ -59,7 +59,7 @@ spec:
             #initialDelaySeconds: 60
             #periodSeconds: 10    
       volumes:
-        - name: datapv
+        - name: datapv-bitcoind
           hostPath:
-            path: /data
+            path: /bitcoin/.bitcoin
             type: DirectoryOrCreate

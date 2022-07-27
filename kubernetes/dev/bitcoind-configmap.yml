@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bb-btc-config
+  labels:
+    app: bb-btc
+    tier: blockbook
+  namespace: dev
+data:
+  rpcbind: "0.0.0.0"
+  rpcallowi: "0.0.0.0"
+  minrelaytxfee: 0
+  maxmempool: 300
+  mempoolexpiry: 12
+  rpcworkqueue: 600
+  txindex: 1
+  rpcuser: bitcoinrpc

@@ -39,14 +39,14 @@ spec:
     spec:
       containers:
         - name: bb-btc
-          image: gostartups/blockbookonly-bitcoin
+          image: REPO:TAG
           envFrom:
             #- secretRef:
                 #name: bb-btc-secret
             #- configMapRef:
                 #name: bb-btc-config
           volumeMounts:
-            - name: datapv
+            - name: datapv-bb-btc
               mountPath: /opt/coins/blockbook/bitcoin/data
           resources:
             requests:
@@ -59,7 +59,7 @@ spec:
             #initialDelaySeconds: 60
             #periodSeconds: 10    
       volumes:
-        - name: datapv
+        - name: datapv-bb-btc
           hostPath:
             path: /data
             type: DirectoryOrCreate
