@@ -10,8 +10,8 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
-      port: 9130
-      targetPort: 9130
+      port: 8332
+      targetPort: 8332
 
 ---
 apiVersion: apps/v1
@@ -39,19 +39,20 @@ spec:
     spec:
       containers:
         - name: bitcoind
-          image: kylemanna/bitcoind
+          #image: kylemanna/bitcoind:latest
+          image: kylemanna/bitcoind@sha256:17c7dd21690f3be34630db7389d2f0bff14649e27a964afef03806a6d631e0f1
           envFrom:
             - secretRef:
                 name: bitcoind-secret
             - configMapRef:
                 name: bitcoind-config
           volumeMounts:
-            - name: datapv-bitcoind
+            - name: pvc-bitcoind
               mountPath: /bitcoin/.bitcoin
           resources:
             requests:
-              cpu: 250m
-              memory: 1.5Gi
+              cpu: 500m
+              memory: 2Gi
           #readinessProbe:
             #httpGet:
               #path: /
@@ -59,6 +60,6 @@ spec:
             #initialDelaySeconds: 60
             #periodSeconds: 10    
       volumes:
-        - name: datapv-bitcoind
+        - name: pvc-bitcoind
           persistentVolumeClaim:
-            claimName: datapv-bitcoind
+            claimName: datapvc-bitcoind

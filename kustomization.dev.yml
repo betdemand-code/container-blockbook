@@ -1,10 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ./kubernetes/dev/bitcoind-pvc.yml
-- ./kubernetes/dev/bitcoind-configmap.yml
-- ./kubernetes/dev/bitcoind-secrets.yml
-- ./kubernetes/dev/bitcoind-deployment.yml
+#- ./kubernetes/dev/bitcoind-pvc.yml
+#- ./kubernetes/dev/bitcoind-configmap.yml
+#- ./kubernetes/dev/bitcoind-secrets.yml
+#- ./kubernetes/dev/bitcoind-deployment.yml
 - ./kubernetes/dev/bb-btc-pvc.yml
 - ./kubernetes/dev/bb-btc-secrets.yml
 - ./kubernetes/dev/bb-btc-configmap.yml

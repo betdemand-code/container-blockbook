@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: datapv-bitcoind
+  name: datapvc-bitcoind
   namespace: dev
 spec: 
   accessModes:
@@ -9,4 +9,4 @@ spec:
   storageClassName: ebs-sc
   resources: 
     requests:
-      storage: 10Gi
+      storage: 50Gi
