@@ -50,7 +50,7 @@ spec:
               mountPath: /opt/coins/blockbook/bitcoin/data
           resources:
             requests:
-              cpu: 500Mi
+              cpu: 500m
               memory: "1Gi"
           #readinessProbe:
             #httpGet:
