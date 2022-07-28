@@ -2,7 +2,7 @@
     "coin_name": "Bitcoin",
     "coin_shortcut": "BTC",
     "coin_label": "Bitcoin",
-    "rpc_url": "https://app-e48876d8-1b67-481c-b04f-5548117ae949.hk.ankr.com",
+    "rpc_url": "http://app-e48876d8-1b67-481c-b04f-5548117ae949.hk.ankr.com",
     "rpc_user": "stakefair",
     "rpc_pass": "81t63uptiqdo",
     "rpc_timeout": 25,
