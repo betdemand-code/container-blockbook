@@ -20,7 +20,7 @@ metadata:
   name: bb-btc-deployment
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
    type: RollingUpdate
    rollingUpdate:
@@ -50,8 +50,8 @@ spec:
               mountPath: /opt/coins/blockbook/bitcoin/data
           resources:
             requests:
-              cpu: 200m
-              memory: "512Mi"
+              cpu: 500m
+              memory: "1Gi"
           #readinessProbe:
             #httpGet:
               #path: /
