@@ -20,7 +20,7 @@ metadata:
   name: bb-btc-deployment
   namespace: dev
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
    type: RollingUpdate
    rollingUpdate:
